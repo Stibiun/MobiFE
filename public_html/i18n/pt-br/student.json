@@ -1,0 +1,25 @@
+{
+    "webappApp": {
+        "student" : {
+            "home": {
+                "title": "Students",
+                "createLabel": "Criar novo Student",
+                "createOrEditLabel": "Criar ou editar Student"
+            },
+            "created": "Um novo Student foi criado com o identificador {{ param }}",
+            "updated": "Um Student foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Student foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Student {{ id }}?"
+            },
+            "detail": {
+                "title": "Student"
+            },
+            "name": "Name",
+            "birthDate": "Birth Date",
+            "picture": "Picture",
+            "institutionUnity": "Institution Unity",
+            "mobileApplicationUsers": "Mobile Application Users"
+        }
+    }
+}

@@ -1,0 +1,47 @@
+
+<div *ngIf="mobileApplicationUser">
+    <h2><span jhiTranslate="webappApp.mobileApplicationUser.detail.title">Mobile Application User</span> {{mobileApplicationUser.id}}</h2>
+    <hr>
+    <jee-alert-error></jee-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="webappApp.mobileApplicationUser.name">Name</span></dt>
+        <dd>
+            <span>{{mobileApplicationUser.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="webappApp.mobileApplicationUser.password">Password</span></dt>
+        <dd>
+            <span>{{mobileApplicationUser.password}}</span>
+        </dd>
+        <dt><span jhiTranslate="webappApp.mobileApplicationUser.salt">Salt</span></dt>
+        <dd>
+            <span>{{mobileApplicationUser.salt}}</span>
+        </dd>
+        <dt><span jhiTranslate="webappApp.mobileApplicationUser.email">Email</span></dt>
+        <dd>
+            <span>{{mobileApplicationUser.email}}</span>
+        </dd>
+        <dt><span jhiTranslate="webappApp.mobileApplicationUser.phone">Phone</span></dt>
+        <dd>
+            <span>{{mobileApplicationUser.phone}}</span>
+        </dd>
+        <dt><span jhiTranslate="webappApp.mobileApplicationUser.students">Students</span></dt>
+        <dd>
+            <span *ngFor="let students of mobileApplicationUser.students; let last = last">
+                <a [routerLink]="['/student', students?.id ]">{{students.name}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'mobile-application-user/'+ mobileApplicationUser.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

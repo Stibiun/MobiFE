@@ -1,0 +1,26 @@
+{
+    "webappApp": {
+        "mobileApplicationUser" : {
+            "home": {
+                "title": "Mobile Application Users",
+                "createLabel": "Criar novo Mobile Application User",
+                "createOrEditLabel": "Criar ou editar Mobile Application User"
+            },
+            "created": "Um novo Mobile Application User foi criado com o identificador {{ param }}",
+            "updated": "Um Mobile Application User foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Mobile Application User foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Mobile Application User {{ id }}?"
+            },
+            "detail": {
+                "title": "Mobile Application User"
+            },
+            "name": "Name",
+            "password": "Password",
+            "salt": "Salt",
+            "email": "Email",
+            "phone": "Phone",
+            "students": "Students"
+        }
+    }
+}

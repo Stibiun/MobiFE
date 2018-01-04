@@ -1,0 +1,28 @@
+{
+    "name": "MobiFE",
+    "version": "1.0.0",
+    "keywords": [
+        "util",
+        "functional",
+        "server",
+        "client",
+        "browser"
+    ],
+    "description": "",
+    "licence": "",
+    "repository": "",
+    "author": "stibiun",
+    "contributors": [],
+    "dependencies": {
+        "@angular/router": "",
+        "@angular/core": "",
+        "@angular/common": "",
+        "@angular/http": "",
+        "@angular/platform-browser": "",
+        "@ng-bootstrap/ng-bootstrap": "",
+        "ng-jhipster": "",
+        "@angular/forms": "",
+        "zone.js": "",
+        "rxjs": ""
+    }
+}

@@ -1,0 +1,64 @@
+<div>
+    <h2>
+        <span jhiTranslate="webappApp.institutionUnity.home.title">Institution Unities</span>
+        <button class="btn btn-primary float-right jh-create-entity create-institution-unity" [routerLink]="['/', { outlets: { popup: ['institution-unity-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="webappApp.institutionUnity.home.createLabel">
+            Create new Institution Unity
+            </span>
+        </button>
+    </h2>
+    <jee-alert></jee-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="institutionUnities">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="webappApp.institutionUnity.name">Name</span></th>
+            <th><span jhiTranslate="webappApp.institutionUnity.adress">Adress</span></th>
+            <th><span jhiTranslate="webappApp.institutionUnity.educationalInstitution">Educational Institution</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let institutionUnity of institutionUnities ;trackBy: trackId">
+                <td><a [routerLink]="['../institution-unity', institutionUnity.id ]">{{institutionUnity.id}}</a></td>
+                <td>{{institutionUnity.name}}</td>
+                <td>{{institutionUnity.adress}}</td>
+                <td>
+                    <div *ngIf="institutionUnity.educationalInstitution">
+                        <a [routerLink]="['../educational-institution', institutionUnity.educationalInstitution?.id ]" >{{institutionUnity.educationalInstitution?.name}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../institution-unity', institutionUnity.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'institution-unity/'+ institutionUnity.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'institution-unity/'+ institutionUnity.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

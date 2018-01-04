@@ -1,0 +1,23 @@
+{
+    "webappApp": {
+        "institutionUnity" : {
+            "home": {
+                "title": "Institution Unities",
+                "createLabel": "Criar novo Institution Unity",
+                "createOrEditLabel": "Criar ou editar Institution Unity"
+            },
+            "created": "Um novo Institution Unity foi criado com o identificador {{ param }}",
+            "updated": "Um Institution Unity foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Institution Unity foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Institution Unity {{ id }}?"
+            },
+            "detail": {
+                "title": "Institution Unity"
+            },
+            "name": "Name",
+            "adress": "Adress",
+            "educationalInstitution": "Educational Institution"
+        }
+    }
+}

@@ -1,0 +1,70 @@
+<div>
+    <h2>
+        <span jhiTranslate="webappApp.mobileApplicationUser.home.title">Mobile Application Users</span>
+        <button class="btn btn-primary float-right jh-create-entity create-mobile-application-user" [routerLink]="['/', { outlets: { popup: ['mobile-application-user-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="webappApp.mobileApplicationUser.home.createLabel">
+            Create new Mobile Application User
+            </span>
+        </button>
+    </h2>
+    <jee-alert></jee-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="mobileApplicationUsers">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="webappApp.mobileApplicationUser.name">Name</span></th>
+            <th><span jhiTranslate="webappApp.mobileApplicationUser.password">Password</span></th>
+            <th><span jhiTranslate="webappApp.mobileApplicationUser.salt">Salt</span></th>
+            <th><span jhiTranslate="webappApp.mobileApplicationUser.email">Email</span></th>
+            <th><span jhiTranslate="webappApp.mobileApplicationUser.phone">Phone</span></th>
+            <th><span jhiTranslate="webappApp.mobileApplicationUser.students">Students</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let mobileApplicationUser of mobileApplicationUsers ;trackBy: trackId">
+                <td><a [routerLink]="['../mobile-application-user', mobileApplicationUser.id ]">{{mobileApplicationUser.id}}</a></td>
+                <td>{{mobileApplicationUser.name}}</td>
+                <td>{{mobileApplicationUser.password}}</td>
+                <td>{{mobileApplicationUser.salt}}</td>
+                <td>{{mobileApplicationUser.email}}</td>
+                <td>{{mobileApplicationUser.phone}}</td>
+                <td>
+                    <span *ngFor="let students of mobileApplicationUser.students; let last = last">
+                            <a class="form-control-static" [routerLink]="['../student', students?.id ]">{{students.name}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../mobile-application-user', mobileApplicationUser.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'mobile-application-user/'+ mobileApplicationUser.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'mobile-application-user/'+ mobileApplicationUser.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

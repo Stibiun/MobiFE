@@ -1,0 +1,22 @@
+{
+    "webappApp": {
+        "educationalInstitution" : {
+            "home": {
+                "title": "Educational Institutions",
+                "createLabel": "Criar novo Educational Institution",
+                "createOrEditLabel": "Criar ou editar Educational Institution"
+            },
+            "created": "Um novo Educational Institution foi criado com o identificador {{ param }}",
+            "updated": "Um Educational Institution foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Educational Institution foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Educational Institution {{ id }}?"
+            },
+            "detail": {
+                "title": "Educational Institution"
+            },
+            "name": "Name",
+            "logoUrl": "Logo Url"
+        }
+    }
+}

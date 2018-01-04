@@ -1,0 +1,35 @@
+
+<div *ngIf="institutionUnity">
+    <h2><span jhiTranslate="webappApp.institutionUnity.detail.title">Institution Unity</span> {{institutionUnity.id}}</h2>
+    <hr>
+    <jee-alert-error></jee-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="webappApp.institutionUnity.name">Name</span></dt>
+        <dd>
+            <span>{{institutionUnity.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="webappApp.institutionUnity.adress">Adress</span></dt>
+        <dd>
+            <span>{{institutionUnity.adress}}</span>
+        </dd>
+        <dt><span jhiTranslate="webappApp.institutionUnity.educationalInstitution">Educational Institution</span></dt>
+        <dd>
+            <div *ngIf="institutionUnity.educationalInstitution">
+                <a [routerLink]="['/educational-institution', institutionUnity.educationalInstitution?.id]">{{institutionUnity.educationalInstitution?.name}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'institution-unity/'+ institutionUnity.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
